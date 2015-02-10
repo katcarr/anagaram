@@ -10,3 +10,26 @@ var anagram = function(word, list) {
   });
   return results;
 }
+
+
+$(document).ready(function() {
+  $("form#anagram-form").submit(function(event){
+    var word = $("input#word").val();
+    var listString = $("input#list").val();
+    var list = listString.split(",");
+
+    var result = anagram(word, list).join(", ");
+
+    $(".anagrams").text(result);
+
+    if(result){
+      $("#result").show();
+    }else{
+      $("#no-result").show();
+    }
+
+    event.preventDefault();
+
+  });
+
+});

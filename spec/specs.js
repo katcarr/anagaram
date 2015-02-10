@@ -10,4 +10,9 @@ describe("anagram", function() {
   it("will return two anagrams", function() {
     expect(anagram("sub", ["bus", "stop", "ubs"])).to.eql(["bus", "ubs"]);
   });
+
+  it("will check for anagrams for a number", function(){
+    expect(anagram("5489", ["45","8945", "9458"])).to.eql(["8945","9458"]);
+  });
+
 });
