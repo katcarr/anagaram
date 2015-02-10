@@ -1,15 +1,12 @@
 var anagram = function(word, list) {
 
   var results = [];
+  var sortedWord = word.toLowerCase().split("").sort().join("");
 
-  var letterizeWord = word.toLowerCase().split("").sort();
-  var letterizedList = list[0].toLowerCase().split("").sort();
-  var same = false;
-
-  if (letterizeWord.join("") === letterizedList.join("")){
-    results.push(list[0]);
-  }
-
-
+  list.forEach(function(listWord) {
+    if ((listWord.toLowerCase().split("").sort().join("")) === sortedWord) {
+      results.push(listWord);
+    }
+  });
   return results;
 }
